@@ -1,0 +1,1674 @@
+<?xml version='1.0' encoding='UTF-8'?><definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://published.service.v3_0.endpoint.catalog.evolan.sopra.com/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns="http://schemas.xmlsoap.org/wsdl/" name="MarketedElementEndPointService" targetNamespace="http://published.service.v3_0.endpoint.catalog.evolan.sopra.com/">
+  <types>
+<xs:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://published.service.v3_0.endpoint.catalog.evolan.sopra.com/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://published.service.v3_0.endpoint.catalog.evolan.sopra.com/" version="1.0">
+
+      
+  <xs:element name="getAfterSaleElementList" type="tns:getAfterSaleElementList"/>
+
+      
+  <xs:element name="getAfterSaleElementListResponse" type="tns:getAfterSaleElementListResponse"/>
+
+      
+  <xs:element name="getMarketedElementList" type="tns:getMarketedElementList"/>
+
+      
+  <xs:element name="getMarketedElementListResponse" type="tns:getMarketedElementListResponse"/>
+
+      
+  <xs:element name="getOfferOnSaleList" type="tns:getOfferOnSaleList"/>
+
+      
+  <xs:element name="getOfferOnSaleListForCommercialElt" type="tns:getOfferOnSaleListForCommercialElt"/>
+
+      
+  <xs:element name="getOfferOnSaleListForCommercialEltResponse" type="tns:getOfferOnSaleListForCommercialEltResponse"/>
+
+      
+  <xs:element name="getOfferOnSaleListResponse" type="tns:getOfferOnSaleListResponse"/>
+
+      
+  <xs:complexType name="getOfferOnSaleList">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="businessContext" type="tns:businessContextDto"/>
+          
+      <xs:element minOccurs="0" name="distributionContext" type="tns:distributionContextDto"/>
+          
+      <xs:element minOccurs="0" name="customerContext" type="tns:customerContextDto"/>
+          
+      <xs:element minOccurs="0" name="classificationContext" type="tns:classificationContextDto"/>
+          
+      <xs:element minOccurs="0" name="marketingContext" type="tns:marketingContextDto"/>
+          
+      <xs:element minOccurs="0" name="detailLevel" type="tns:detailLevelDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="businessContextDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="appCod" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="cpyCod" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="exchgMessageType" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="externalbankingOpRef" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="internalbankingOpRef" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="languageCod" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="msgActionTyp" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="msgHeaderType" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="msgVersionNb" type="xs:int"/>
+          
+      <xs:element minOccurs="0" name="operationalPosId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="structureEltId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="treatmentDt" type="xs:dateTime"/>
+          
+      <xs:element minOccurs="0" name="userId" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="distributionContextDto">
+        
+    <xs:sequence>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="communicationChannelCodList" nillable="true" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distributorId" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="customerContextDto">
+        
+    <xs:sequence>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="distribMarketIdList" nillable="true" type="xs:string"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="distribSegmentIdList" nillable="true" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="classificationContextDto">
+        
+    <xs:sequence>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="distribFamilyIdList" nillable="true" type="xs:string"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="distribFamilyUseIdList" nillable="true" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="marketingContextDto">
+        
+    <xs:sequence>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="distribNeedIdList" nillable="true" type="xs:string"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="distribNeedUniverseIdList" nillable="true" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="detailLevelDto">
+        
+    <xs:sequence>
+          
+      <xs:element name="catalogAddtlPropertyInd" type="xs:boolean"/>
+          
+      <xs:element name="catalogAfterSaleDistribInd" type="xs:boolean"/>
+          
+      <xs:element name="catalogClassificationInd" type="xs:boolean"/>
+          
+      <xs:element name="catalogClientTrgtInd" type="xs:boolean"/>
+          
+      <xs:element minOccurs="0" name="catalogDetailLevel" type="xs:int"/>
+          
+      <xs:element name="catalogEltInRelationInd" type="xs:boolean"/>
+          
+      <xs:element name="catalogMarketingTrgtInd" type="xs:boolean"/>
+          
+      <xs:element name="catalogSaleDistribInd" type="xs:boolean"/>
+          
+      <xs:element minOccurs="0" name="eligibilityContext" type="tns:specificCustomerContextDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="specificCustomerContextDto">
+        
+    <xs:sequence>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="specificCustomerContext" nillable="true" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="getOfferOnSaleListResponse">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="return" type="tns:resultOfferOnSaleListDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="resultOfferOnSaleListDto">
+        
+    <xs:sequence>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="dataHeadingTypeList" nillable="true" type="tns:dataHeadingTypeDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="offerOnSaleList" nillable="true" type="tns:offerOnSaleDto"/>
+          
+      <xs:element minOccurs="0" name="returnContext" type="tns:returnContextDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="dataHeadingTypeDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="catalogDhtLbl" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="dhtAccuracy" type="xs:int"/>
+          
+      <xs:element minOccurs="0" name="dhtDataTypeId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="dhtId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="dhtMaxLength" type="xs:int"/>
+          
+      <xs:element minOccurs="0" name="dhtNonEnumFilterLowerLimit" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="dhtNonEnumFilterUpperLimit" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="offerOnSaleDto">
+        
+    <xs:sequence>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="channelList" nillable="true" type="tns:channelDto"/>
+          
+      <xs:element minOccurs="0" name="distributor" type="tns:distributorDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="offerList" nillable="true" type="tns:offerDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="channelDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="communicationChannelCodId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="communicationChannelCodLbl" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="distributorDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="distributorId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distributorLbl" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="offerDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="additionalProperties" type="tns:additionalPropertyDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="assemblyList" nillable="true" type="tns:assemblyContainedDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="choiceGroupList" nillable="true" type="tns:choiceGroupDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="commercialDocumentList" nillable="true" type="tns:documentDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="commercialOptionList" nillable="true" type="tns:optionContainedDto"/>
+          
+      <xs:element minOccurs="0" name="distribOfferCmrclNm" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribOfferCompositionTyp" type="xs:int"/>
+          
+      <xs:element minOccurs="0" name="distribOfferComrclDesc" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribOfferId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribOfferLbl" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribOfferOwnerId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribOfferOwnerLbl" type="xs:string"/>
+          
+      <xs:element name="distribPricingInd" type="xs:boolean"/>
+          
+      <xs:element minOccurs="0" name="eligibility" type="tns:eligibilityDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="familyList" nillable="true" type="tns:familyDto"/>
+          
+      <xs:element name="inseparableDistribProductInd" type="xs:boolean"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="marketList" nillable="true" type="tns:marketDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="needList" nillable="true" type="tns:needDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="offerRelationList" nillable="true" type="tns:offerRelationDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="productList" nillable="true" type="tns:productContainedDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="segmentList" nillable="true" type="tns:segmentDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="additionalPropertyDto">
+        
+    <xs:sequence>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="characteristicEltList" nillable="true" type="tns:characteristicDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="characteristicGrpList" nillable="true" type="tns:groupOfCharDto"/>
+          
+      <xs:element minOccurs="0" name="templateNature" type="tns:tmplNatureDto"/>
+          
+      <xs:element minOccurs="0" name="templateNatureType" type="tns:tmplNatureTypeDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="characteristicDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="distribChrctId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribChrctLbl" type="xs:string"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="externalValueList" nillable="true" type="tns:externalValueDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="internalValueList" nillable="true" type="tns:inputValueDto"/>
+          
+      <xs:element minOccurs="0" name="templateNature" type="tns:tmplNatureDto"/>
+          
+      <xs:element minOccurs="0" name="templateNatureType" type="tns:tmplNatureTypeDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="externalValueDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="catalogExternalDataRef" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="dhId" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="inputValueDto">
+        
+    <xs:sequence>
+          
+      <xs:element name="catalogContractualDataInd" type="xs:boolean"/>
+          
+      <xs:element minOccurs="0" name="catalogDataMaxValue" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="catalogDataMinValue" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="catalogDataValue" type="xs:string"/>
+          
+      <xs:element name="catalogDefaultValueInd" type="xs:boolean"/>
+          
+      <xs:element minOccurs="0" name="catalogDhDescr" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="catalogDhLbl" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="catalogDhValueType" type="xs:string"/>
+          
+      <xs:element name="catalogMultipleValueInd" type="xs:boolean"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="choice" nillable="true" type="tns:choiceDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="currency" nillable="true" type="tns:currencyDto"/>
+          
+      <xs:element minOccurs="0" name="dhId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="dhtId" type="xs:string"/>
+          
+      <xs:element name="distribPricingInd" type="xs:boolean"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="choiceDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="catalogColumnLbl" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="catalogDataValue" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="catalogSelectedValueInd" type="xs:string"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="columnList" nillable="true" type="tns:columnTableDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="columnTableDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="catalogDataValue" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="currency" type="tns:currencyDto"/>
+          
+      <xs:element minOccurs="0" name="dhtDataTypeId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="dhtMaxLength" type="xs:int"/>
+          
+      <xs:element minOccurs="0" name="paramTableColId" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="currencyDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="catalogCurNbDecimal" type="xs:int"/>
+          
+      <xs:element minOccurs="0" name="curCod" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="curLbl" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="tmplNatureDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="catalogTmplNatId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="catalogTmplNatLbl" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="templateNatureType" type="tns:tmplNatureTypeDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="tmplNatureTypeDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="catalogTmplNatTypId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="catalogTmplNatTypLbl" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="groupOfCharDto">
+        
+    <xs:sequence>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="characteristicList" nillable="true" type="tns:characteristicDto"/>
+          
+      <xs:element minOccurs="0" name="distribGroupOfChrctId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribGroupOfChrctLbl" type="xs:string"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="groupOfCharList" nillable="true" type="tns:groupOfCharDto"/>
+          
+      <xs:element minOccurs="0" name="templateNature" type="tns:tmplNatureDto"/>
+          
+      <xs:element minOccurs="0" name="templateNatureType" type="tns:tmplNatureTypeDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="assemblyContainedDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="assembly" type="tns:assemblyDto"/>
+          
+      <xs:element minOccurs="0" name="catalogPresenceCod" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="assemblyDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="additionalProperties" type="tns:additionalPropertyDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="afterSaleActList" nillable="true" type="tns:actDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="assemblyRelationList" nillable="true" type="tns:assemblyRelationDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="choiceGroupList" nillable="true" type="tns:choiceGroupDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="commercialDocumentList" nillable="true" type="tns:documentDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="commercialOptionList" nillable="true" type="tns:optionContainedDto"/>
+          
+      <xs:element minOccurs="0" name="distribAssemblyComrclDesc" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribAssemblyComrclNm" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribAssemblyId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribAssemblyLbl" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribAssemblyOwnerId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribAssemblyOwnerLbl" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="eligibility" type="tns:eligibilityDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="familyList" nillable="true" type="tns:familyDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="familyRelationList" nillable="true" type="tns:familyRelationDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="functioningEltList" nillable="true" type="tns:functioningEltDto"/>
+          
+      <xs:element name="inseparableDistribProductInd" type="xs:boolean"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="marketList" nillable="true" type="tns:marketDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="productList" nillable="true" type="tns:productContainedDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="productRelationList" nillable="true" type="tns:productRelationDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="saleActList" nillable="true" type="tns:actDto"/>
+          
+      <xs:element minOccurs="0" name="templateNature" type="tns:tmplNatureDto"/>
+          
+      <xs:element minOccurs="0" name="templateNatureType" type="tns:tmplNatureTypeDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="actDto">
+        
+    <xs:sequence>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="channelList" nillable="true" type="tns:channelDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="commercialDocumentList" nillable="true" type="tns:documentDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="detailByChannel" nillable="true" type="tns:detailByChannelDto"/>
+          
+      <xs:element minOccurs="0" name="distribActComrclDesc" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribActComrclNm" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribActId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribActLbl" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribAfterSaleTyp" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribOptionalFctngTransacTyp" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribSaleTyp" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="eligibility" type="tns:eligibilityDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="familyList" nillable="true" type="tns:familyDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="needList" nillable="true" type="tns:needDto"/>
+          
+      <xs:element minOccurs="0" name="productFctng" type="tns:productDto"/>
+          
+      <xs:element minOccurs="0" name="templateNature" type="tns:tmplNatureDto"/>
+          
+      <xs:element minOccurs="0" name="templateNatureType" type="tns:tmplNatureTypeDto"/>
+          
+      <xs:element minOccurs="0" name="transacCategory" type="tns:transacCategoryDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="documentDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="distribDocumentLbl" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribDocumentRef" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribDocumentTypId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribDocumentTypLbl" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="detailByChannelDto">
+        
+    <xs:sequence>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="channelList" nillable="true" type="tns:channelDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="characteristicEltList" nillable="true" type="tns:characteristicDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="characteristicGrpList" nillable="true" type="tns:groupOfCharDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="eligibilityDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="distribEligibility" type="xs:string"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="eligibilityReasonList" nillable="true" type="tns:eligibilityReasonDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="eligibilityReasonDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="catalogEligibilityReasonId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="catalogEligibilityReasonLbl" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="familyDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="distribFamilyId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribFamilyLbl" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribFamilyLngLbl" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribFamilyRank" type="xs:int"/>
+          
+      <xs:element minOccurs="0" name="familyUse" type="tns:familyUseDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="familyUseDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="distribFamilyUseId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribFamilyUseLbl" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="needDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="distribNeedId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribNeedLbl" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribRelevance" type="xs:int"/>
+          
+      <xs:element minOccurs="0" name="needTargetElt" type="tns:needTargetEltDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="specializedRelevanceList" nillable="true" type="tns:specializedRelevanceDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="needTargetEltDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="distribAssemblyId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribAssemblyOwnerId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribOptionId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribProductId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribProductOwnerId" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="specializedRelevanceDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="distribRelevance" type="xs:int"/>
+          
+      <xs:element minOccurs="0" name="market" type="tns:marketDto"/>
+          
+      <xs:element minOccurs="0" name="segment" type="tns:segmentDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="marketDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="distribMarketId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribMarketLbl" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribRelevance" type="xs:int"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="segmentDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="distribRelevance" type="xs:int"/>
+          
+      <xs:element minOccurs="0" name="distribSegmentId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribSegmentLbl" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="segmentation" type="tns:segmentationDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="segmentationDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="distribSegmentationId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribSegmentationLbl" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="productDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="additionalProperties" type="tns:additionalPropertyDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="afterSaleActList" nillable="true" type="tns:actDto"/>
+          
+      <xs:element minOccurs="0" name="appCod" type="xs:string"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="assemblyRelationList" nillable="true" type="tns:assemblyRelationDto"/>
+          
+      <xs:element minOccurs="0" name="catalogRefProductId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="catalogRefProductLbl" type="xs:string"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="commercialDocumentList" nillable="true" type="tns:documentDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="commercialOptionChoiceGroupeList" nillable="true" type="tns:optionChoiceGroupDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="commercialOptionList" nillable="true" type="tns:optionContainedDto"/>
+          
+      <xs:element minOccurs="0" name="distribProductComrclDesc" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribProductComrclNm" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribProductId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribProductLbl" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribProductOwnerId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribProductOwnerLbl" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="eligibility" type="tns:eligibilityDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="familyList" nillable="true" type="tns:familyDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="familyRelationList" nillable="true" type="tns:familyRelationDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="functioningChoiceGroupList" nillable="true" type="tns:functioningChoiceGroupDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="functioningEltList" nillable="true" type="tns:functioningEltDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="inducedTransactionList" nillable="true" type="tns:inducedTransactionDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="marketList" nillable="true" type="tns:marketDto"/>
+          
+      <xs:element minOccurs="0" name="producer" type="tns:producerDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="productRelationList" nillable="true" type="tns:productRelationDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="referenceProductRelationList" nillable="true" type="tns:referenceProductRelationDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="saleActList" nillable="true" type="tns:actDto"/>
+          
+      <xs:element minOccurs="0" name="templateNature" type="tns:tmplNatureDto"/>
+          
+      <xs:element minOccurs="0" name="templateNatureType" type="tns:tmplNatureTypeDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="usageTransactionList" nillable="true" type="tns:usageTransactionDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="assemblyRelationDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="distribAssemblyId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribAssemblyOwnerId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="relation" type="tns:relationDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="relationDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="distribEltRelationId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribEltRelationLbl" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="optionChoiceGroupDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="catalogPresenceCod" type="xs:string"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="commercialOptionList" nillable="true" type="tns:optionContainedDto"/>
+          
+      <xs:element minOccurs="0" name="distribOptionChcGrpComrclDesc" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribOptionChcGrpComrclNm" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribOptionChcGrpId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribOptionChcGrpLbl" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="eligibility" type="tns:eligibilityDto"/>
+          
+      <xs:element minOccurs="0" name="maxDistribChoice" type="xs:int"/>
+          
+      <xs:element minOccurs="0" name="minDistribChoice" type="xs:int"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="optionContainedDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="catalogPresenceCod" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="option" type="tns:optionDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="optionDto">
+        
+    <xs:sequence>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="afterSaleActList" nillable="true" type="tns:actDto"/>
+          
+      <xs:element minOccurs="0" name="characteristicElt" type="tns:characteristicDto"/>
+          
+      <xs:element minOccurs="0" name="characteristicGrp" type="tns:groupOfCharDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="commercialDocumentList" nillable="true" type="tns:documentDto"/>
+          
+      <xs:element minOccurs="0" name="distribOptionComrclDescr" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribOptionComrclNm" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribOptionId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribOptionLbl" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribProductId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribProductOwnerId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribProductOwnerLbl" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="eligibility" type="tns:eligibilityDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="saleActList" nillable="true" type="tns:actDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="familyRelationDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="family" type="tns:familyDto"/>
+          
+      <xs:element minOccurs="0" name="relation" type="tns:relationDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="functioningChoiceGroupDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="distribFctngGrpId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribFctngGrpLbl" type="xs:string"/>
+          
+      <xs:element name="distribFctngGrpMndtryChoiceInd" type="xs:boolean"/>
+          
+      <xs:element minOccurs="0" name="eligibility" type="tns:eligibilityDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="functioningEltList" nillable="true" type="tns:functioningEltDto"/>
+          
+      <xs:element minOccurs="0" name="maxDistribChoice" type="xs:int"/>
+          
+      <xs:element minOccurs="0" name="minDistribChoice" type="xs:int"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="functioningEltDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="catalogPresenceCod" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="characteristicElt" type="tns:characteristicDto"/>
+          
+      <xs:element minOccurs="0" name="characteristicGrp" type="tns:groupOfCharDto"/>
+          
+      <xs:element minOccurs="0" name="eligibility" type="tns:eligibilityDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="inducedTransactionDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="distribTransacId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribTransacLbl" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="producerDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="catalogProducerId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="catalogProducerLbl" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="productRelationDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="distribProductId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribProductOwnerId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="relation" type="tns:relationDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="referenceProductRelationDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="catalogRefProductId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="relation" type="tns:relationDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="usageTransactionDto">
+        
+    <xs:sequence>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="characteristicEltList" nillable="true" type="tns:characteristicDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="characteristicGrpList" nillable="true" type="tns:groupOfCharDto"/>
+          
+      <xs:element minOccurs="0" name="distribTransacId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribTransacLbl" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="templateNature" type="tns:tmplNatureDto"/>
+          
+      <xs:element minOccurs="0" name="templateNatureType" type="tns:tmplNatureTypeDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="transacCategoryDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="distribTransacCtgyId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribTransacCtgyLbl" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="choiceGroupDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="catalogPresenceCod" type="xs:string"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="commercialOptionList" nillable="true" type="tns:optionContainedDto"/>
+          
+      <xs:element minOccurs="0" name="distribChoiceGrpComrclDesc" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribChoiceGrpComrclNm" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribChoiceGrpId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribChoiceGrpLbl" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="eligibility" type="tns:eligibilityDto"/>
+          
+      <xs:element minOccurs="0" name="maxDistribChoice" type="xs:int"/>
+          
+      <xs:element minOccurs="0" name="minDistribChoice" type="xs:int"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="productList" nillable="true" type="tns:productContainedDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="productContainedDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="catalogPresenceCod" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="product" type="tns:productDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="offerRelationDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="distribOfferId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribOfferOwnerId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="relation" type="tns:relationDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="returnContextDto">
+        
+    <xs:sequence>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="errorList" nillable="true" type="tns:errorDto"/>
+          
+      <xs:element minOccurs="0" name="exchangeReturnCod" type="xs:int"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="errorDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="errorCod" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="errorLbl" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="errorSeverity" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="errorSource" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="errorSubTyp" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="errorTyp" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="getOfferOnSaleListForCommercialElt">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="businessContext" type="tns:businessContextDto"/>
+          
+      <xs:element minOccurs="0" name="distributionContext" type="tns:distributionContextDto"/>
+          
+      <xs:element minOccurs="0" name="customerContext" type="tns:customerContextDto"/>
+          
+      <xs:element minOccurs="0" name="classificationContext" type="tns:classificationContextDto"/>
+          
+      <xs:element minOccurs="0" name="marketingContext" type="tns:marketingContextDto"/>
+          
+      <xs:element minOccurs="0" name="commercialEltIdentification" type="tns:commercialEltIdentificationDto"/>
+          
+      <xs:element minOccurs="0" name="detailLevel" type="tns:detailLevelDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="commercialEltIdentificationDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="assemblyIdentification" type="tns:assemblyIdentificationDto"/>
+          
+      <xs:element minOccurs="0" name="optionIdentification" type="tns:optionIdentificationDto"/>
+          
+      <xs:element minOccurs="0" name="productIdentification" type="tns:productIdentificationDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="assemblyIdentificationDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="distribAssemblyId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribAssemblyOwnerId" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="optionIdentificationDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="distribOptionId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribProductId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribProductOwnerId" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="productIdentificationDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="distribProductId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribProductOwnerId" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="getOfferOnSaleListForCommercialEltResponse">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="return" type="tns:resultOfferForCommercialEltListDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="resultOfferForCommercialEltListDto">
+        
+    <xs:sequence>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="dataHeadingTypeList" nillable="true" type="tns:dataHeadingTypeDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="offerForCommercialEltList" nillable="true" type="tns:offerForCommercialEltDto"/>
+          
+      <xs:element minOccurs="0" name="returnContext" type="tns:returnContextDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="offerForCommercialEltDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="commercialEltIdentification" type="tns:commercialEltIdentificationDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="offerOnSaleList" nillable="true" type="tns:offerOnSaleDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="getMarketedElementList">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="businessContext" type="tns:businessContextDto"/>
+          
+      <xs:element minOccurs="0" name="distributionContext" type="tns:distributionContextDto"/>
+          
+      <xs:element minOccurs="0" name="customerContext" type="tns:customerContextDto"/>
+          
+      <xs:element minOccurs="0" name="classificationContext" type="tns:classificationContextDto"/>
+          
+      <xs:element minOccurs="0" name="marketingContext" type="tns:marketingContextDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="equipmentList" type="tns:equipmentDto"/>
+          
+      <xs:element minOccurs="0" name="detailLevel" type="tns:detailLevelDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="equipmentDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="assemblyEquipment" type="tns:assemblyEquipmentDto"/>
+          
+      <xs:element minOccurs="0" name="optionEquipment" type="tns:optionEquipmentDto"/>
+          
+      <xs:element minOccurs="0" name="productEquipment" type="tns:productEquipmentDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="assemblyEquipmentDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="contractSbcptDt" type="xs:dateTime"/>
+          
+      <xs:element minOccurs="0" name="distribAssemblyId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribAssemblyOwnerId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribContractId" type="xs:string"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="optionList" nillable="true" type="tns:optionEquipmentDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="productList" nillable="true" type="tns:productEquipmentDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="optionEquipmentDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="contractSbcptDt" type="xs:dateTime"/>
+          
+      <xs:element minOccurs="0" name="distribContractId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribOptionId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribProductId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribProductOwnerId" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="productEquipmentDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="contractSbcptDt" type="xs:dateTime"/>
+          
+      <xs:element minOccurs="0" name="distribAssemblyId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribAssemblyOwnerId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribContractId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribProductId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribProductOwnerId" type="xs:string"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="optionList" nillable="true" type="tns:optionEquipmentDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="getMarketedElementListResponse">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="return" type="tns:resultMarketedEltListDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="resultMarketedEltListDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="afterSaleElement" type="tns:afterSaleElementDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="dataHeadingTypeList" nillable="true" type="tns:dataHeadingTypeDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="offerOnSaleList" nillable="true" type="tns:offerOnSaleDto"/>
+          
+      <xs:element minOccurs="0" name="returnContext" type="tns:returnContextDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="afterSaleElementDto">
+        
+    <xs:sequence>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="afterSaleForAssemblyEquipmentList" nillable="true" type="tns:afterSaleForAssemblyEquipmentDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="afterSaleForOptionEquipmentList" nillable="true" type="tns:afterSaleForOptionEquipmentDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="afterSaleForProductEquipmentList" nillable="true" type="tns:afterSaleForProductEquipmentDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="afterSaleForAssemblyEquipmentDto">
+        
+    <xs:sequence>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="assemblyActList" nillable="true" type="tns:actWithIdDto"/>
+          
+      <xs:element minOccurs="0" name="assemblyEquipment" type="tns:assemblyEquipmentDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="actWithIdDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="act" type="tns:actDto"/>
+          
+      <xs:element minOccurs="0" name="distribAssemblyId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribAssemblyOwnerId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribOptionId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribProductId" type="xs:string"/>
+          
+      <xs:element minOccurs="0" name="distribProductOwnerId" type="xs:string"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="afterSaleForOptionEquipmentDto">
+        
+    <xs:sequence>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="optionActList" nillable="true" type="tns:actWithIdDto"/>
+          
+      <xs:element minOccurs="0" name="optionEquipment" type="tns:optionEquipmentDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="afterSaleForProductEquipmentDto">
+        
+    <xs:sequence>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="optionActList" nillable="true" type="tns:actWithIdDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="productActList" nillable="true" type="tns:actWithIdDto"/>
+          
+      <xs:element minOccurs="0" name="productEquipment" type="tns:productEquipmentDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="getAfterSaleElementList">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="businessContext" type="tns:businessContextDto"/>
+          
+      <xs:element minOccurs="0" name="distributionContext" type="tns:distributionContextDto"/>
+          
+      <xs:element minOccurs="0" name="marketingContext" type="tns:marketingContextDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="equipmentList" type="tns:equipmentDto"/>
+          
+      <xs:element minOccurs="0" name="detailLevel" type="tns:detailLevelDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="getAfterSaleElementListResponse">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="return" type="tns:resultAfterSaleActListDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+      
+  <xs:complexType name="resultAfterSaleActListDto">
+        
+    <xs:sequence>
+          
+      <xs:element minOccurs="0" name="afterSaleElement" type="tns:afterSaleElementDto"/>
+          
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="dataHeadingTypeList" nillable="true" type="tns:dataHeadingTypeDto"/>
+          
+      <xs:element minOccurs="0" name="returnContext" type="tns:returnContextDto"/>
+        
+    </xs:sequence>
+      
+  </xs:complexType>
+
+</xs:schema>
+  </types>
+  <message name="getOfferOnSaleList">
+    <part element="tns:getOfferOnSaleList" name="parameters">
+    </part>
+  </message>
+  <message name="getMarketedElementListResponse">
+    <part element="tns:getMarketedElementListResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getOfferOnSaleListResponse">
+    <part element="tns:getOfferOnSaleListResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getMarketedElementList">
+    <part element="tns:getMarketedElementList" name="parameters">
+    </part>
+  </message>
+  <message name="getAfterSaleElementListResponse">
+    <part element="tns:getAfterSaleElementListResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getOfferOnSaleListForCommercialEltResponse">
+    <part element="tns:getOfferOnSaleListForCommercialEltResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getOfferOnSaleListForCommercialElt">
+    <part element="tns:getOfferOnSaleListForCommercialElt" name="parameters">
+    </part>
+  </message>
+  <message name="getAfterSaleElementList">
+    <part element="tns:getAfterSaleElementList" name="parameters">
+    </part>
+  </message>
+  <portType name="MarketedElementEndPoint">
+    <operation name="getOfferOnSaleList">
+      <input message="tns:getOfferOnSaleList" wsam:Action="http://published.service.v3_0.endpoint.catalog.evolan.sopra.com/MarketedElementEndPoint/getOfferOnSaleListRequest">
+    </input>
+      <output message="tns:getOfferOnSaleListResponse" wsam:Action="http://published.service.v3_0.endpoint.catalog.evolan.sopra.com/MarketedElementEndPoint/getOfferOnSaleListResponse">
+    </output>
+    </operation>
+    <operation name="getAfterSaleElementList">
+      <input message="tns:getAfterSaleElementList" wsam:Action="http://published.service.v3_0.endpoint.catalog.evolan.sopra.com/MarketedElementEndPoint/getAfterSaleElementListRequest">
+    </input>
+      <output message="tns:getAfterSaleElementListResponse" wsam:Action="http://published.service.v3_0.endpoint.catalog.evolan.sopra.com/MarketedElementEndPoint/getAfterSaleElementListResponse">
+    </output>
+    </operation>
+    <operation name="getMarketedElementList">
+      <input message="tns:getMarketedElementList" wsam:Action="http://published.service.v3_0.endpoint.catalog.evolan.sopra.com/MarketedElementEndPoint/getMarketedElementListRequest">
+    </input>
+      <output message="tns:getMarketedElementListResponse" wsam:Action="http://published.service.v3_0.endpoint.catalog.evolan.sopra.com/MarketedElementEndPoint/getMarketedElementListResponse">
+    </output>
+    </operation>
+    <operation name="getOfferOnSaleListForCommercialElt">
+      <input message="tns:getOfferOnSaleListForCommercialElt" wsam:Action="http://published.service.v3_0.endpoint.catalog.evolan.sopra.com/MarketedElementEndPoint/getOfferOnSaleListForCommercialEltRequest">
+    </input>
+      <output message="tns:getOfferOnSaleListForCommercialEltResponse" wsam:Action="http://published.service.v3_0.endpoint.catalog.evolan.sopra.com/MarketedElementEndPoint/getOfferOnSaleListForCommercialEltResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="MarketedElementEndPointPortBinding" type="tns:MarketedElementEndPoint">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getOfferOnSaleList">
+      <input>
+        <soap12:body use="literal"/>
+      </input>
+      <output>
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAfterSaleElementList">
+      <input>
+        <soap12:body use="literal"/>
+      </input>
+      <output>
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getMarketedElementList">
+      <input>
+        <soap12:body use="literal"/>
+      </input>
+      <output>
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getOfferOnSaleListForCommercialElt">
+      <input>
+        <soap12:body use="literal"/>
+      </input>
+      <output>
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="MarketedElementEndPointService">
+    <port binding="tns:MarketedElementEndPointPortBinding" name="MarketedElementEndPointPort">
+      <soap12:address location="https://90.115.201.231:8644/catalog-ws/MarketedElementEndPoint"/>
+    </port>
+  </service>
+</definitions>

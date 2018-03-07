@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SoapProcessor.iml" filepath="$PROJECT_DIR$/SoapProcessor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nifi-NifiSoapProcessor-nar/nifi-NifiSoapProcessor-nar.iml" filepath="$PROJECT_DIR$/nifi-NifiSoapProcessor-nar/nifi-NifiSoapProcessor-nar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nifi-NifiSoapProcessor-processors/nifi-NifiSoapProcessor-processors.iml" filepath="$PROJECT_DIR$/nifi-NifiSoapProcessor-processors/nifi-NifiSoapProcessor-processors.iml" />
+    </modules>
+  </component>
+</project>
